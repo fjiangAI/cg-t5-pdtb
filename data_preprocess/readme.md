@@ -1,14 +1,16 @@
-# 数据预处理
-该部分使用到了AllenNLP的SRL模块，具体模型需要下载后放在allennlp_model下：https://storage.googleapis.com/allennlp-public-models/structured-prediction-srl-bert.2020.12.15.tar.gz
+# Data preprocess
+This part uses the Allen NLP SRL model. 
 
-详情参见：https://demo.allennlp.org/semantic-role-labeling
+The specific model needs to be downloaded and placed in the path: allennlp_model: https://storage.googleapis.com/allennlp-public-models/structured-prediction-srl-bert.2020.12.15.tar.gz
 
-数据预处理主要分为2个部分：
+More details can be seen: https://demo.allennlp.org/semantic-role-labeling
 
-1. 第一个部分为将原始数据利用SRL工具转换为提示模式的txt格式文件。
-2. 第二部分则将文件转换为模型部分可以读取的json格式文件。
+There are two parts of the data preprocessing：
 
-完整运行代码如下：
+1. The first part is to convert the original data file into TXT format file in prompt mode by using SRL tool。
+2. The second part is to convert the TXT format file into a JSON format file that can be recognized by the model.
+
+The complete command is as follows：
 ```
 PYTHONIOENCODING=UTF-8 nohup python3 preprocess.py \
 --convert_type={question_first, question_second, name, explain_relation, relation_explain}
@@ -16,12 +18,12 @@ PYTHONIOENCODING=UTF-8 nohup python3 preprocess.py \
 --src_data_path={data_dir}
 ```
 
-原始文件夹为data_dir，里面存放train.txt和test.txt文件。
-文件每行一个样例，每个样例的格式为：
+The original folder is **data_dir**, which stores **train.txt** and **test.txt**.
+Each line of the file has one sample, and the format of each sample is:
 
 > file_name \t du1 \t du2 \t R1 \t R2 \n
 
-例如：
+For example:
 > wsj_2100.pdtb	Couch-potato jocks watching ABC's "Monday Night Football" can now vote during halftime for the greatest play in 20 years from among four or five filmed replays	Two weeks ago, viewers of several NBC daytime consumer segments started calling a 900 number for advice on various life-style issues	Expansion	Conjunction
 
-方便起见，可以直接参考run.sh里的代码运行，获得最好性能的预处理后的结果。
+For convenience, you can directly run the code in run.sh to get the best performance of mode for preprocessing the data.
