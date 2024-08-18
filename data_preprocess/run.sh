@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 PYTHONIOENCODING=UTF-8 nohup python3 preprocess.py > process.out &

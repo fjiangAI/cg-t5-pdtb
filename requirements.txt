@@ -1,0 +1,12 @@
+torch==1.7.1+cu110
+transformers==4.3.3
+nltk==3.4.5
+tqdm==4.62.3
+matplotlib==3.1.1
+numpy=1.19.5
+allennlp==2.6.0
+allennlp_models==2.6.0
+scikit_learn=0.24.2
+tensorboardX==2.4
+spacy==2.2.0
+en_core_web_sm==2.2.0
